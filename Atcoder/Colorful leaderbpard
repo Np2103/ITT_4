@@ -1,0 +1,27 @@
+n=int(input())
+l=list(map(int,input().split()))
+
+c = set()
+minc, maxc = 0, 0
+for i in l:
+  if i>=1 and i<=399:
+    c.add("gy")
+  elif i>= 400 and i<=799:
+    c.add("b")
+  elif i>=800 and i<=1199:
+    c.add("g")
+  elif i>=1200 and i<=1599:
+    c.add("c")
+  elif i>=1600 and i<=1999:
+    c.add("bl")
+  elif i>=2000 and i<=2399:
+    c.add("y")
+  elif i>=2400 and i<=2799:
+    c.add("o")
+  elif i>=2800 and i<=3199:
+    c.add("r")
+  elif i >= 3200:
+    maxc+=1
+minc = max(1, len(c)) if len(c) == 0 and maxc>0 else len(c)
+maxc += len(c)
+print(minc, maxc)
